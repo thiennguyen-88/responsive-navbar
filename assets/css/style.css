@@ -1,4 +1,151 @@
-h1 {
-    color: red;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background-color: aliceblue;
+}
+
+.main {
+    width: 1200px;
+    max-width: 100%;
+    min-height: 100vh;
+    margin:  auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.nav__pc {
+
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+/* article */
+h1 {
+    line-height: 2rem;
+
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+    margin-top: 54px;
+}
+
+article img {
+    display: block;
+    width: 640px;
+    max-width: 100%;
+    margin: 36px auto ;
+
+}
+
+/* mobile nav */
+.nav__bars-btn {
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+
+.nav__mobi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 320px;
+    max-width: 100%;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all linear 0.2s;
+}
+
+.nav__mobi-link {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
+    padding: 8px 0;
+}
+
+.nav__mobi-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    font-size: 2rem;
+    color: #000;
+
+}
+
+.nav__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+/* show/hidden overlay and nav mobi */
+.nav__input {
+    display: none;
+}
+
+.nav__input:checked ~ .nav__overlay {
+    display: block;
+}
+
+.nav__input:checked ~ .nav__mobi {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.nav__mobi-close:hover {
+    color: red;
+}
+@media all and (max-width:63.9375em) {
+    .nav__bars-btn {
+        display: block;
+        margin-left: 16px;
+    }
+
+    .nav__pc {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+ 
